@@ -1,0 +1,38 @@
+1) Посмотреть где я --- pwd [Enter]
+2) Создать папку --- mkdir Folder_1 [Enter]
+3) Зайти в папку --- cd Folder_1 [Enter]
+4) Создать 3 папки --- mkdir folder_1 folder_2 folder_3 [Enter]
+5) Зайти в любоую папку --- cd folder_1 [Enter]
+6) Создать 5 файлов (3 txt, 2 json) --- touch filename_1.txt filename_2.txt filename_3.txt filename_4.json filename_5.json [Enter]
+7) Создать 3 папки --- mkdir folder_1_1 folder_1_2 folder_1_3 [Enter]
+8) Вывести список содержимого папки --- ls -la [Enter]
+9) + Открыть любой txt файл ---- vim filename_3.txt [Enter]
+10) + написать туда что-нибудь, любой текст ---- i <ввести любой текст> [Esc]
+11) + сохранить и выйти ---- :wq [Enter]
+12) Выйти из папки на уровень выше ---- cd .. [Enter]
+13) переместить любые 2 файла, которые вы создали, в любую другую папку --- mv -v ./folder_1/{filename_1.txt,filename_2.txt} ./folder_2 [Enter]
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку --- cp ./folder_1/{filename_3.txt,filename_4.json} ./folder_3 [Enter]
+15) Найти файл по имени --- find . -name "filename_4.json" [Enter]
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает --- tail -f filename_3.txt [Enter]
+17) вывести несколько первых строк из текстового файла --- head -2 filename_3.txt
+18) вывести несколько последних строк из текстового файла --- tail -2 filename_3.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает --- less filename_3.txt
+20) вывести дату и время --- date
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000 --- curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 --- 
+  1. vim script_1.sh [Enter] -> i 
+     #!/bin/bash
+     cd Folder_1
+     mkdir folder_1 folder_2 folder_3
+     cd folder_1
+     touch filename_1.txt filename_2.txt filename_3.txt filename_4.json filename_5.json
+     mkdir folder_1_1 folder_1_2 folder_1_3
+     ls -la
+     mv filename_1.txt filename_2.txt folder_1_2/ 
+  2. [Esc] -> :wq [Enter]
+  3. chmod +x ./script_1.sh [Enter]
+  4. ./script_1.sh
